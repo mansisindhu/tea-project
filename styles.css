@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&family=Grand+Hotel&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --slantedText: "Grand Hotel", cursive;
+  --primaryColor: #698f3f;
+  --secondaryColor: #fca311;
+  --mainDark: #3a3e3b;
+  --mainWhite: #fff;
+  --mainGrey: #e5e5e5;
+  --mainTransition: all 0.5s ease-in-out;
+  --letterSpacing: 0.5rem;
+}
+body {
+  font-family: "Catamaran", sans-serif;
+  line-height: 1.5;
+}
+
+/* helper/utility classes */
+a {
+  text-decoration: none;
+}
+.text-white {
+  color: var(--mainWhite);
+}
+.text-center {
+  text-align: center;
+}
+.text-primary {
+  color: var(--primaryColor);
+}
+/* clear fix */
+.clear-fix::after,
+.clear-fix::before {
+  content: "";
+  clear: both;
+  display: table;
+}
+/* globals */
+.section-center {
+  padding: 4rem 0;
+  width: 80vh;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+/* navbar */
+
+/* header */
+.header {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(./images/pexels-pixabay-461428.jpg) center/cover no-repeat fixed;
+  position: relative;
+}
+/* banner */
+.banner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  letter-spacing: var(--letterSpacing);
+}
+
+.banner-subtitle {
+  font-size: 2rem;
+  font-family: var(--slantedText);
+  color: var(--primaryColor);
+  /* animation */
+  animation: slideFromLeft 5s ease-in-out 1;
+}
+.banner-title {
+  text-transform: uppercase;
+  font-size: 3.2rem;
+  color: var(--mainWhite);
+  line-height: 1.3;
+  margin-top: 2.5rem;
+  /* animation */
+  animation: slideFromRight 5s ease-in-out 1;
+}
+.main-btn,
+.banner-btn {
+  display: inline-block;
+  background: var(--primaryColor);
+  padding: 0.8rem 1.2rem;
+  text-transform: uppercase;
+  margin-top: 2rem;
+  color: var(--mainDark);
+  font-weight: bold;
+  outline: 0.2rem solid var(--primaryColor);
+  outline-offset: 4px;
+  cursor: pointer;
+  transition: var(--mainTransition);
+}
+.main-btn:hover,
+.banner-btn:hover {
+  color: var(--mainWhite);
+  opacity: 0.7;
+}
+.banner-btn {
+  padding: 1.2rem 1.5rem;
+  /* animation */
+  animation: show 5s ease-in-out 1;
+}
+/* end header */
+
+/* amimations */
+@keyframes show {
+  0% {
+    transform: scale(2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes slideFromRight {
+  0% {
+    transform: translateX(1000px);
+  }
+  50% {
+    transform: translateX(-200px);
+  }
+  75% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-1000px);
+  }
+  50% {
+    transform: translateX(200px);
+  }
+  75% {
+    transform: translateX(-50px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+/* end animations */
+
+/* content divider */
+.content-divider {
+  height: 0.5rem;
+  background: linear-gradient(
+    to left,
+    var(--primaryColor),
+    var(--secondaryColor),
+    var(--primaryColor)
+  );
+}
+/* end content divider */
+
+/* skills */
+.skills {
+  background: var(--mainGrey);
+}
+.skill {
+  padding: 2.5rem 0;
+  text-align: center;
+  transition: var(--mainTransition);
+}
+.skill-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  transition: var(--mainTransition);
+  display: inline-block;
+}
+.skill-title {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  transition: var(--mainTransition);
+  text-transform: uppercase;
+  color: var(--primaryColor);
+  letter-spacing: var(--letterSpacing);
+}
+.skill-text {
+  max-width: 13rem;
+  margin: 0 auto;
+}
+.skill:hover {
+  background: var(--primaryColor);
+}
+.skill:hover .skill-title {
+  color: var(--mainWhite);
+}
+.skill:hover .skill-icon {
+  transform: translateY(-5px);
+}
+@media screen and (min-width: 576px) {
+  .skill {
+    float: left;
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .skill {
+    width: 25%;
+  }
+}
+/* end skills */
+/* about */
+.about-img,
+.about-info {
+  padding: 2rem 0;
+}
+.about-picture {
+  width: 100%;
+  display: block;
+  transition: var(--mainTransition);
+}
+.about-picture-container {
+  background: var(--primaryColor);
+  border: 0.5rem solid var(--primaryColor);
+  border-radius: 1rem;
+  /* overflow */
+  overflow: hidden;
+}
+.about-picture-container:hover,
+.about-picture:hover {
+  opacity: 1;
+  transform: scale(1.2);
+}
+/* end about */
